@@ -6,11 +6,12 @@ class cliente {
 }
 class contaCorrente{
     agencia;
-    saldo = 0;
+    #saldo = 0;
+
     depositar(valor){
         if(valor > 0){
-            this.saldo += valor;
-            console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.saldo}`)
+            this.#saldo += valor;
+            console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.#saldo}`)
         }else{
             console.log(`Valor inválido para depósito`);
         }
@@ -20,12 +21,15 @@ class contaCorrente{
             console.log("Não foi possivel efetuar o saque!");
             return;
         }
-        if(this.saldo >= valor){
-            this.saldo -= valor;
-            console.log(`Seu saldo é ${this.saldo} ${this.saldo === 1 ? "real" : "reais"}`);
+        if(this.#saldo >= valor){
+            this.#saldo -= valor;
+            console.log(`Seu saldo é ${this.#saldo} ${this.#saldo === 1 ? "real" : "reais"}`);
         }else{
             console.log(`Não foi possível efetuar o saque! Saldo insuficiente`)
         }
+    }
+    getSaldo() {
+        return this.#saldo; 
     }
 }
 
@@ -42,9 +46,10 @@ cliente2.cpf = 88822233309;
 const contaCorrenteLeon = new contaCorrente();
 contaCorrenteLeon.agencia = 1001;
 contaCorrenteLeon.depositar(100);
+contaCorrenteLeon.depositar(50);
+contaCorrenteLeon.sacar(100);
 
-contaCorrenteLeon.sacar(-200);
-console.log(contaCorrenteLeon.saldo);
+console.log(contaCorrenteLeon.getSaldo());
 
 
 
