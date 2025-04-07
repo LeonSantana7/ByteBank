@@ -5,34 +5,36 @@ class cliente {
     cpf;
 
 }
-class contaCorrente{
+class contaCorrente {
     agencia;
-    #saldo = 0;
+    // quando tiver o underline na frente quer dizer que é privado
+    // #saldo
+    _saldo = 0;
 
     // fazer a operação com tal valor(parâmetro)
-    depositar(valor){
-        if(valor > 0){
+    depositar(valor) {
+        if (valor > 0) {
             // this se refere ao objeto que está chamando o método
-            this.#saldo += valor;
-            console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.#saldo}`)
-        }else{
+            this._saldo += valor;
+            console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this._saldo}`)
+        } else {
             console.log(`Valor inválido para depósito`);
         }
     }
-    sacar(valor){
-        if(valor <= 0){
+    sacar(valor) {
+        if (valor <= 0) {
             console.log("Não foi possivel efetuar o saque!");
             return;
         }
-        if(this.#saldo >= valor){
-            this.#saldo -= valor;
-            console.log(`Seu saldo é ${this.#saldo} ${this.#saldo === 1 ? "real" : "reais"}`);
-        }else{
+        if (this._saldo >= valor) {
+            this._saldo -= valor;
+            console.log(`Seu saldo é ${this._saldo} ${this._saldo === 1 ? "real" : "reais"}`);
+        } else {
             console.log(`Não foi possível efetuar o saque! Saldo insuficiente`)
         }
     }
     getSaldo() {
-        return this.#saldo; 
+        return this._saldo;
     }
 }
 
@@ -58,5 +60,7 @@ console.log("----------------------------------------------");
 
 console.log(contaCorrenteLeon)
 console.log("----------------------------------------------");
-console.log("Saldo atual: R$",contaCorrenteLeon.getSaldo());
+console.log("Saldo atual: R$", contaCorrenteLeon.getSaldo());
+
+
 
