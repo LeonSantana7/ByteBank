@@ -1,4 +1,5 @@
 // molde
+//classes em JavaScript podem ter tanto objetos quanto comportamentos (funções/ metodos)
 class cliente {
     nome;
     cpf;
@@ -8,8 +9,10 @@ class contaCorrente{
     agencia;
     #saldo = 0;
 
+    // fazer a operação com tal valor(parâmetro)
     depositar(valor){
         if(valor > 0){
+            // this se refere ao objeto que está chamando o método
             this.#saldo += valor;
             console.log(`Depósito de R$${valor} realizado. Novo saldo: R$${this.#saldo}`)
         }else{
@@ -45,16 +48,15 @@ cliente2.cpf = 88822233309;
 
 const contaCorrenteLeon = new contaCorrente();
 contaCorrenteLeon.agencia = 1001;
+console.log("----------------------------------------------");
 contaCorrenteLeon.depositar(100);
+console.log("----------------------------------------------");
 contaCorrenteLeon.depositar(50);
-contaCorrenteLeon.sacar(100);
+console.log("----------------------------------------------");
+contaCorrenteLeon.sacar(20);
+console.log("----------------------------------------------");
 
-console.log(contaCorrenteLeon.getSaldo());
+console.log(contaCorrenteLeon)
+console.log("----------------------------------------------");
+console.log("Saldo atual: R$",contaCorrenteLeon.getSaldo());
 
-
-
-
-
-
-console.log(cliente1);
-console.log(cliente2);
