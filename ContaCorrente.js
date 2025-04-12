@@ -1,11 +1,37 @@
+import { Cliente } from "./Cliente.js";
 export class ContaCorrente {
     // Publico
+    // Static é uma propriedade que pertence à classe em si, e não a uma instância específica da classe.
+    static numeroDeContas = 0;
     agencia;
-    cliente;
 
     // quando tiver o underline na frente quer dizer que é privado (#saldo)
     // Privado
     _saldo = 0;
+    _cliente;
+
+    constructor(cliente, agencia) {
+        this.agencia = agencia;
+        this._cliente = cliente;
+        ContaCorrente.numeroDeContas += 1;
+    }
+
+    set cliente(novoValor) {
+        // Verifica se o novo valor é uma instância da classe Cliente
+        if (novoValor instanceof Cliente) {
+            // Se for, atribui o novo valor ao atributo privado _cliente
+            this._cliente = novoValor;
+        }
+    }
+
+    get cliente() {
+        // Retorna o valor do atributo privado _cliente
+        return this._cliente;
+    }
+
+    get saldo() {
+        return this._saldo;
+    }
 
     // fazer a operação com tal valor(parâmetro)
     depositar(valor) {
@@ -40,9 +66,5 @@ export class ContaCorrente {
         } else {
             console.log("Transferência falhou.");
         }
-    }
-
-    getSaldo() {
-        return this._saldo;
     }
 }

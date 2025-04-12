@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ByteBank Interativo</title>
+    <title>ByteBank</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,15 +21,15 @@
                 <input type="text" id="nome" placeholder="Nome do cliente" />
                 <input type="text" id="cpf" placeholder="CPF (somente números)" />
                 <input type="number" id="agencia" placeholder="Agência" />
-                <button onclick="criarConta()">Criar Conta</button>
+                <button id="btnCriarConta">Criar Conta</button>
             </section>
 
             <section class="card">
                 <h2>💰 Operações</h2>
                 <select id="contaSelecionada"></select>
                 <input type="number" id="valorOperacao" placeholder="Valor" />
-                <button onclick="depositar()">Depositar</button>
-                <button onclick="sacar()">Sacar</button>
+                <button id="btnDepositar">Depositar</button>
+                <button id="btnSacar">Sacar</button>
             </section>
 
             <section class="card">
@@ -37,7 +37,7 @@
                 <select id="contaOrigem"></select>
                 <select id="contaDestino"></select>
                 <input type="number" id="valorTransferencia" placeholder="Valor a transferir" />
-                <button onclick="transferir()">Transferir</button>
+                <button id="btnTransferir">Transferir</button>
             </section>
         </div>
 
