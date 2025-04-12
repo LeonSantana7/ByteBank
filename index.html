@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ByteBank</title>
-    <script src="index.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteBank Interativo</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>🏦 ByteBank</h1>
+            <p>Simule contas bancárias como um profissional</p>
+        </header>
+
+        <div class="cards-grid">
+            <section class="card">
+                <h2>➕ Criar Conta</h2>
+                <input type="text" id="nome" placeholder="Nome do cliente" />
+                <input type="text" id="cpf" placeholder="CPF (somente números)" />
+                <input type="number" id="agencia" placeholder="Agência" />
+                <button onclick="criarConta()">Criar Conta</button>
+            </section>
+
+            <section class="card">
+                <h2>💰 Operações</h2>
+                <select id="contaSelecionada"></select>
+                <input type="number" id="valorOperacao" placeholder="Valor" />
+                <button onclick="depositar()">Depositar</button>
+                <button onclick="sacar()">Sacar</button>
+            </section>
+
+            <section class="card">
+                <h2>🔁 Transferência</h2>
+                <select id="contaOrigem"></select>
+                <select id="contaDestino"></select>
+                <input type="number" id="valorTransferencia" placeholder="Valor a transferir" />
+                <button onclick="transferir()">Transferir</button>
+            </section>
+        </div>
+
+        <section class="contas">
+            <h2>📋 Contas Cadastradas</h2>
+            <div id="listaContas" class="lista-contas"></div>
+        </section>
+    </div>
+
+    <script type="module" src="index.js"></script>
 </body>
+
 </html>

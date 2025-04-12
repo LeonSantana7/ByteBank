@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(-45deg, #0a3d91, #111, #0a3d91, #222);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #0a3d91;
+    text-shadow: 0 0 5px #ffffff88;
+}
+
+header p {
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    border-left: 5px solid #0a3d91;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(10, 61, 145, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(10, 61, 145, 0.5);
+}
+
+.card h2 {
+    color: #0a3d91;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-shadow: 0 0 3px #0a3d91;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #444;
+    transition: border 0.2s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #0a3d91;
+    outline: none;
+    box-shadow: 0 0 6px #0a3d91;
+}
+
+button {
+    background-color: #0a3d91;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0c51c3;
+    transform: scale(1.03);
+}
+
+.lista-contas {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+.conta-card {
+    background: #1c1c1c;
+    border-left: 4px solid #0a3d91;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(10, 61, 145, 0.2);
+}
+
+.conta-card strong {
+    color: #0a3d91;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.conta-card span {
+    color: #ccc;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
